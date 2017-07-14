@@ -74,7 +74,7 @@ function game:draw()
         end
      ----------------------------------------------------------------       
         love.graphics.print("ui object num:"..#self.ui_object,0,0)
-        love.graphics.print("Fps:"..love.timer.getFPS())
+        love.graphics.print("Fps:"..love.timer.getFPS(),0,20)
         love.graphics.print("main object:"..self.main_object.name,150,0)
         love.graphics.print((math.floor(self.main_object.locate_x) or "nil").." "
                                 ..(math.floor(self.main_object.locate_y) or "nil").." "
