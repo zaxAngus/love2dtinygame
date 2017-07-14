@@ -4,4 +4,5 @@ function love.conf(win)
 	win.window.height=1080
 	win.modules.joystick=false
 	win.modules.physics=false
+	win.console=true
 end
