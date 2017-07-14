@@ -22,7 +22,7 @@ function map:ini(x,y)
       self[4]=love.image.newImageData("resource/map/testmap"..(self.i+1)..(self.j+1)..".png")]]
       for i=1,4 do
             self[i]=self.loader_channel_output:demand()--等待输出结果通道的结果
-            self[i]=love.graphics.newImage(self[i])-
+            self[i]=love.graphics.newImage(self[i])
       end
 end
 function map:update(x,y)
