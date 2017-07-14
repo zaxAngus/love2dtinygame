@@ -29,10 +29,10 @@ function map:update(x,y)
       self.x,self.y=x-960,y-540
 end
 function map:draw()
-      love.graphics.draw(self[1],0,0,0,1,1,self.x-self.i*1920,self.y-self.j*1080)
-      love.graphics.draw(self[2],win_w,0,0,1,1,self.x-self.i*1920,self.y-self.j*1080)
-      love.graphics.draw(self[3],0,win_h,0,1,1,self.x-self.i*1920,self.y-self.j*1080)
-      love.graphics.draw(self[4],win_w,win_h,0,1,1,self.x-self.i*1920,self.y-self.j*1080)
+      love.graphics.draw(self[1],0,0,0,1,1,self.x-self.i*1920+(1920-win_w)/2,self.y-self.j*1080+(1080-win_h)/2)
+      love.graphics.draw(self[2],win_w,0,0,1,1,self.x-self.i*1920-(1920-win_w)/2,self.y-self.j*1080+(1080-win_h)/2)
+      love.graphics.draw(self[3],0,win_h,0,1,1,self.x-self.i*1920+(1920-win_w)/2,self.y-self.j*1080-(1080-win_h)/2)
+      love.graphics.draw(self[4],win_w,win_h,0,1,1,self.x-self.i*1920-(1920-win_w)/2,self.y-self.j*1080-(1080-win_h)/2)
 end
 return map
 

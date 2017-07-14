@@ -72,6 +72,7 @@ function game:draw()
         for key,value in pairs(self.ui_object_static) do
             value:draw(dt)
         end
+     ----------------------------------------------------------------       
         love.graphics.print("ui object num:"..#self.ui_object,0,0)
         love.graphics.print("main object:"..self.main_object.name,150,0)
         love.graphics.print((math.floor(self.main_object.locate_x) or "nil").." "
@@ -101,6 +102,7 @@ function game:draw()
         love.graphics.print("forward: "..tostring(self.main_object.forward),150,140)
         love.graphics.print("backward: "..tostring(self.main_object.backward),150,160)
         love.graphics.print("hp"..self.main_object.hp.."/"..self.main_object.hp_max,150,180)
+        ----------------------------------------------------------------
     end
        
 end
