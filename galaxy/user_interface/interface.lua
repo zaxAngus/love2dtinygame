@@ -22,10 +22,15 @@ function mainmenu:create(game)
         love.event.quit()
     end
     local button_quitgame=button.new(3,200,50,love.graphics.newImage("testbutton.bmp"),nil,quitgame)
-    
-    button_startgame:activate(0,0,game)
-    button_loadgame:activate(0,60,game)
-    button_quitgame:activate(0,120,game)
+    if win_w==1280 then
+        button_startgame:activate(0,0,game)
+        button_loadgame:activate(0,60,game)
+        button_quitgame:activate(0,120,game)
+    elseif win_w==1920 then
+        button_startgame:activate(0,0,game)
+        button_loadgame:activate(0,60,game)
+        button_quitgame:activate(0,120,game)
+    end
     game.background=love.graphics.newImage("menu_background.jpg")
 end
 table.insert(_interface,mainmenu)
@@ -63,14 +68,18 @@ function base:create(game)
      x.owner:create_world()
   end
   local button_takeoff=button.new(11,200,50,love.graphics.newImage("testbutton.bmp"),nil,takeoff)
-  button_myships:activate(160,0,game)
-  button_weapons:activate(400,0,game)
-  button_members:activate(640,0,game)
-  button_fighters:activate(880,0,game)
-  button_pilots:activate(1120,0,game)
-  button_jail:activate(1360,0,game)
-  button_back:activate(1600,0,game)
-  button_takeoff:activate(1720,1030,game)
+    if win_w==1280 then
+        button_takeoff:activate(100,100,game)
+    elseif win_w==1920 then
+        button_myships:activate(160,0,game)
+        button_weapons:activate(400,0,game)
+        button_members:activate(640,0,game)
+        button_fighters:activate(880,0,game)
+        button_pilots:activate(1120,0,game)
+        button_jail:activate(1360,0,game)
+        button_back:activate(1600,0,game)
+        button_takeoff:activate(1720,1030,game)
+    end
 end
 table.insert(_interface,base)
 
@@ -78,7 +87,7 @@ table.insert(_interface,base)
 local travel={}
 function travel:create(game)
   local stateBar_hp=stateBar.new(1,nil,nil)
-  stateBar_hp:activate(1800,0,"hp",game)
+  stateBar_hp:activate(win_w-100,0,"hp",game)
 end
 table.insert(_interface,travel)
 
