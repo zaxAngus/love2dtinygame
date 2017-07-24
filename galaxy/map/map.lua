@@ -16,10 +16,6 @@ function map:ini(x,y)
       self.loader_channel_input=love.thread.getChannel("map_loader_channel_input")
       self.loader_channel_output=love.thread.getChannel("map_loader_channel_output")
       self.loader:start(self.i,self.j)
-      --[[self[1]=love.image.newImageData("resource/map/testmap"..self.i..self.j..".png")
-      self[2]=love.image.newImageData("resource/map/testmap"..(self.i+1)..self.j..".png")
-      self[3]=love.image.newImageData("resource/map/testmap"..self.i..(self.j+1)..".png")
-      self[4]=love.image.newImageData("resource/map/testmap"..(self.i+1)..(self.j+1)..".png")]]
       for i=1,4 do
             self[i]=self.loader_channel_output:demand()--等待输出结果通道的结果
             self[i]=love.graphics.newImage(self[i])
@@ -27,6 +23,9 @@ function map:ini(x,y)
 end
 function map:update(x,y)
       self.x,self.y=x-960,y-540
+      if self.i~=math.floor(self.x/1920) or self.j~=math.floor(self.y/1080) then
+            
+      end
 end
 function map:draw()
       love.graphics.draw(self[1],0,0,0,1,1,self.x-self.i*1920+(1920-win_w)/2,self.y-self.j*1080+(1080-win_h)/2)
